@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfb07f66-d4aa-409b-ab00-769326bfad12" name="Changes" comment="Initial commit / without Floor work">
+    <list default="true" id="bfb07f66-d4aa-409b-ab00-769326bfad12" name="Changes" comment="Cleaned for unused objects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/olegivanov/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/olegivanov/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/olegivanov/ElevatorRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/olegivanov/ElevatorSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/olegivanov/ElevatorSimulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/olegivanov/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/olegivanov/Floor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/olegivanov/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/olegivanov/Passenger.java" afterDir="false" />
@@ -56,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1692741222908</updated>
       <workItem from="1692741224109" duration="26257000" />
-      <workItem from="1692864470167" duration="4757000" />
+      <workItem from="1692864470167" duration="10743000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit / without Floor work">
       <option name="closed" value="true" />
@@ -66,7 +66,23 @@
       <option name="project" value="LOCAL" />
       <updated>1692865853694</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ready for review">
+      <option name="closed" value="true" />
+      <created>1692869987244</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692869987244</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Cleaned for unused objects">
+      <option name="closed" value="true" />
+      <created>1692870185912</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692870185912</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,6 +90,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit / without Floor work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit / without Floor work" />
+    <MESSAGE value="Ready for review" />
+    <MESSAGE value="Cleaned for unused objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned for unused objects" />
   </component>
 </project>

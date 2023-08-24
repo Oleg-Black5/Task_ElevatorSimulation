@@ -1,24 +1,20 @@
 package olegivanov;
 
 
+import lombok.Getter;
+
+@Getter
 public class Elevator {
     public static final int FLOORS = 20; // 20 этажей
-    // Свойства
+    public static final int SPEED = 1000; // Скорость движения лифта 1 этаж/1000 мсек.
+
     private int currentFloor;
     private State state;
     private boolean peopleMoving;
 
-    public int getCurrentFloor() {
-        return currentFloor;
-    }
-
     public void setCurrentFloor(int currentFloor) {
         this.currentFloor = currentFloor;
         System.out.println(this.toString());
-    }
-
-    public State getState() {
-        return state;
     }
 
     public void setState(State state) {
@@ -41,7 +37,6 @@ public class Elevator {
             System.out.println("Нажата кнопка этажа №" + floor);
             pressCloseDoorButton();
             move(this.currentFloor, floor);
-
         }
     }
 
@@ -50,7 +45,7 @@ public class Elevator {
             System.out.println("Не могу закрыть двери");
             return;
         }
-        System.out.println("Осторожно  двери закрываются");
+        System.out.println("Осторожно! Двери закрываются!");
         this.state = State.ЗАКРЫВАЕТ_ДВЕРИ;
     }
 
@@ -65,18 +60,20 @@ public class Elevator {
 
     public void move(int fromFloor, int toFloor) {
         if (fromFloor == toFloor) {
-            //    throw new Exception("Никуда не едем получается");
+            //    throw new Exception("Никуда не едем");
             return;
         }
 
         if (fromFloor < toFloor) {
             this.setState(State.ЕДЕТ_ВВЕРХ);
             for (int i = fromFloor + 1; i <= toFloor; i++) {
+
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(SPEED);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
                 this.currentFloor++;
                 System.out.println(this.toString());
                 //System.out.println("Лифт находится на этаже " + i);
@@ -85,17 +82,18 @@ public class Elevator {
             this.setState(State.ЕДЕТ_ВНИЗ);
             for (int i = fromFloor - 1; i >= toFloor; i--) {
                 this.currentFloor--;
+
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(SPEED);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
                 System.out.println(this.toString());
                 //System.out.println("Лифт находится на этаже " + i);
             }
         }
     }
-
 
     public void peopleMoving() {
         this.peopleMoving = true;
@@ -107,6 +105,6 @@ public class Elevator {
 
     @Override
     public String toString() {
-        return "Текущий этаж: " + this.currentFloor + ", состояние: " + this.state;
+        return "Отчет по лифту: текущий этаж- " + this.currentFloor + ", состояние- " + this.state;
     }
 }

@@ -1,5 +1,10 @@
 package olegivanov;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Passenger {
     private int weight;
     private int FloorNum;
@@ -9,17 +14,9 @@ public class Passenger {
         this.FloorNum = -1;
     }
 
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setFloorNum(int FloorNum) {
-        this.FloorNum = FloorNum;
-    }
-
-    public int getFloorNum() {
-        return FloorNum;
-    }
+//    public void setFloorNum(int FloorNum) {
+//        this.FloorNum = FloorNum;
+//    }
 
     public void enterElevator(Elevator elevator) {
         elevator.peopleMoving();
@@ -32,7 +29,7 @@ public class Passenger {
 
     @Override
     public String toString() {
-        return "Пассажир с этажа №"  + this.FloorNum;
+        return "Пассажира с этажа №"  + this.FloorNum;
     }
 
 }
