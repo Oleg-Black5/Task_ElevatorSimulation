@@ -14,6 +14,7 @@ public class Elevator {
 
     public void setCurrentFloor(int currentFloor) {
         this.currentFloor = currentFloor;
+        System.out.println(this.toString());
     }
 
     public State getState() {
@@ -22,6 +23,7 @@ public class Elevator {
 
     public void setState(State state) {
         this.state = state;
+        System.out.println(this.toString());
     }
 
     public boolean isPeopleMoving() {
@@ -34,25 +36,26 @@ public class Elevator {
         peopleNotMoving();
     }
 
-       public void pressFloorButton(int floor) {
+    public void pressFloorButton(int floor) {
         if (floor > 0 && floor <= FLOORS) {
             System.out.println("Нажата кнопка этажа №" + floor);
             pressCloseDoorButton();
-            move(this.currentFloor,floor);
+            move(this.currentFloor, floor);
 
         }
     }
 
     public void pressCloseDoorButton() {
-        if (this.peopleMoving){
+        if (isPeopleMoving()) {
             System.out.println("Не могу закрыть двери");
+            return;
         }
         System.out.println("Осторожно  двери закрываются");
         this.state = State.ЗАКРЫВАЕТ_ДВЕРИ;
     }
 
     public void pressOpenDoorButton() {
-        System.out.println("Нажата кнопка открывания двери");
+        System.out.println("Двери открываются ");
         this.state = State.ОТКРЫВАЕТ_ДВЕРИ;
     }
 
@@ -67,33 +70,31 @@ public class Elevator {
         }
 
         if (fromFloor < toFloor) {
-            this.state = State.ЕДЕТ_ВВЕРХ;
+            this.setState(State.ЕДЕТ_ВВЕРХ);
             for (int i = fromFloor + 1; i <= toFloor; i++) {
-
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 this.currentFloor++;
-                System.out.println("Лифт находится на этаже " + i);
                 System.out.println(this.toString());
+                //System.out.println("Лифт находится на этаже " + i);
             }
         } else {
+            this.setState(State.ЕДЕТ_ВНИЗ);
             for (int i = fromFloor - 1; i >= toFloor; i--) {
-                this.state = State.ЕДЕТ_ВНИЗ;
                 this.currentFloor--;
-
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("Лифт находится на этаже " + i);
                 System.out.println(this.toString());
+                //System.out.println("Лифт находится на этаже " + i);
             }
         }
-     }
+    }
 
 
     public void peopleMoving() {

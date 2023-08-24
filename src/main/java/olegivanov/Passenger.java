@@ -7,7 +7,6 @@ public class Passenger {
     public Passenger(int weight) {
         this.weight = weight;
         this.FloorNum = -1;
-
     }
 
     public int getWeight() {
@@ -24,13 +23,16 @@ public class Passenger {
 
     public void enterElevator(Elevator elevator) {
         elevator.peopleMoving();
-        System.out.println("Пассажир выходит из лифта.");
+        System.out.println("Пассажир входит в лифт.");
     }
     public void exitElevator(Elevator elevator) {
         elevator.peopleMoving();
         System.out.println("Пассажир выходит из лифта.");
     }
 
-
+    @Override
+    public String toString() {
+        return "Пассажир с этажа №"  + this.FloorNum;
+    }
 
 }

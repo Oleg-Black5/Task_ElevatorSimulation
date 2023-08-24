@@ -100,27 +100,30 @@ public class Floor {
 
     public void pressCallButton() {
         this.callButton = true;
+        System.out.println("Нажата кнопка вызова лифта");
     }
+
     public void unPressCallButton() {
         this.callButton = false;
     }
+
     public int checkElevator(int currentFloor) {
-        if (!(this.floorElevator1 ==currentFloor || this.floorElevator2==currentFloor)){
-            System.out.printf("Ни одного лифта нет на этаже! Надо нажать на кнопку вызова");
+        if (!(this.floorElevator1 == currentFloor || this.floorElevator2 == currentFloor)) {
+            System.out.println("Ни одного свободного лифта нет на этом этаже!");
             return -1;
         }
 
         if (this.floorElevatorState1 == State.СТОИТ_С_ОТКРЫТЫМИ_ДВЕРЯМИ &&
                 this.floorElevatorState2 == State.СТОИТ_С_ОТКРЫТЫМИ_ДВЕРЯМИ &&
-                this.floorElevator1==this.floorElevator2
+                this.floorElevator1 == this.floorElevator2
         ) {
             return (int) Math.random();
         } else if (this.floorElevatorState1 == State.СТОИТ_С_ОТКРЫТЫМИ_ДВЕРЯМИ
         ) {
-            System.out.printf("Выбран лифт 1");
-                       return 0;
+            System.out.println("Выбран лифт 1");
+            return 0;
         } else {
-            System.out.printf("Выбран лифт 2");
+            System.out.println("Выбран лифт 2");
             return 1;
         }
     }
