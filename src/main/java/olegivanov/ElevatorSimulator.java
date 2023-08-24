@@ -1,8 +1,5 @@
 package olegivanov;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class ElevatorSimulator {
     private static final int FLOOR_INIT = 1; // Начальный этаж
     private static final int ELEVATOR_NUM = 2; // Кол-во лифтов
@@ -20,21 +17,14 @@ public class ElevatorSimulator {
                 .floorElevator2(FLOOR_INIT)
                 .floorElevatorState2(State.СТОИТ_С_ОТКРЫТЫМИ_ДВЕРЯМИ)
                 .build();
-//        for (int i = 1; i < floors.length; i++) {
-//            floors[i] = new Floor.Builder()
-//                    .floorElevator1(FLOOR_INIT)
-//                    .floorElevatorState1(State.СТОИТ_С_ОТКРЫТЫМИ_ДВЕРЯМИ)
-//                    .floorElevator2(FLOOR_INIT)
-//                    .floorElevatorState2(State.СТОИТ_С_ОТКРЫТЫМИ_ДВЕРЯМИ)
-//                    .build();
-//        }
+
         Passenger passenger1 = new Passenger(70);
         Passenger passenger2 = new Passenger(90);
         // Имитация действий пассажиров
         // Сценарий 1
         doScenario(passenger1, floor, 1, 14);
         // Сценарий 2
-        doScenario(passenger2, floor, 2, 1);
+        doScenario(passenger2, floor, 15, 1);
         // Завершение программы
         System.out.println("Работа программы завершена.");
     }
